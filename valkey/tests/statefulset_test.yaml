@@ -3,14 +3,15 @@ templates:
   - templates/statefulset.yaml
   - templates/init_config.yaml
 tests:
-  - it: should fail when replica enabled but no size provided
+  - it: should fail when replica persistence enabled but no size provided
     set:
       replica.enabled: true
+      replica.persistence.enabled: true
       replica.persistence.size: ""
     template: templates/statefulset.yaml
     asserts:
       - failedTemplate:
-          errorPattern: "Replica mode requires persistent storage.*"
+          errorPattern: "Persistence with replica mode requires storage size to be defined."
 
   - it: should succeed when replica enabled with size provided
     set:
