@@ -37,7 +37,7 @@ helm install valkey valkey/valkey
 Deploy Valkey with master-replica architecture for read scaling and data redundancy:
 
 ```bash
-helm install valkey valkey/valkey --set replica.enabled=true --set replica.persistence.size=5Gi
+helm install valkey valkey/valkey --set replica.enabled=true --set replica.persistence.enabled=true --set replica.persistence.size=5Gi
 ```
 
 **Services:**
@@ -349,8 +349,8 @@ tls:
 | replica.service.clusterIP | string | `""` |  |
 | replica.service.appProtocol | string | `""` |  |
 | replica.service.loadBalancerClass | string | `""` |  |
-| replica.persistence. |  | `""` |  |
-| replica.persistence.size | string | `""` | Required if replica is enabled |
+| replica.persistence.enabled | bool | `true` |  |
+| replica.persistence.size | string | `""` | Required if replica persistence is enabled |
 | replica.persistence.storageClass | string | `""` |  |
 | replica.persistence.accessModes | list | `""` |  |
 | resources | object | `{}` |  |

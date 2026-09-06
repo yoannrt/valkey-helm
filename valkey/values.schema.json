@@ -388,6 +388,9 @@
                                 "type": "string"
                             }
                         },
+                        "enabled": {
+                            "type": "boolean"
+                        },
                         "size": {
                             "type": "string"
                         },
