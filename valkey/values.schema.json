@@ -396,6 +396,17 @@
                         },
                         "storageClass": {
                             "type": "string"
+                        },
+                        "emptyDir": {
+                            "type": "object",
+                            "properties": {
+                                "medium": {
+                                    "type": "string"
+                                },
+                                "sizeLimit": {
+                                    "type": "string"
+                                }
+                            }
                         }
                     }
                 },
